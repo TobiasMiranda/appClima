@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clima &amp; Actividades</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+
+</head>
+<body data-weather="clear-day">
+
+  <div class="atmosphere" id="atmosphere" aria-hidden="true"></div>
+
+  <main class="app">
+
+    <div class="topbar">
+      <form class="search" id="searchForm" role="search">
+        <input type="text" id="searchInput" placeholder="Buscar ciudad..." autocomplete="off" aria-label="Buscar ciudad">
+        <button type="submit" aria-label="Buscar">🔍</button>
+      </form>
+      <button class="locate-btn" id="locateBtn" type="button" title="Usar mi ubicación" aria-label="Usar mi ubicación">📍</button>
+      <div class="suggestions hidden" id="suggestions"></div>
+    </div>
+
+    <div class="error-banner hidden" id="errorBanner"></div>
+
+    <section class="hero" id="hero">
+      <p class="location" id="locationName">Buscando tu ubicación...</p>
+      <div class="temp-row">
+        <span class="icon" id="weatherIcon">⛅</span>
+        <span class="temp" id="temperature">--°</span>
+      </div>
+      <p class="condition" id="conditionText">—</p>
+      <div class="details">
+        <span id="feelsLike">Sensación —</span>
+        <span id="humidity">Humedad —</span>
+        <span id="wind">Viento —</span>
+        <span id="precipNow" class="hidden"></span>
+      </div>
+    </section>
+
+    <section class="activities">
+      <article class="activity-card">
+        <h3>🏃 Running</h3>
+        <div class="score" id="runningScore">-</div>
+        <p class="score-label" id="runningLabel">—</p>
+        <p class="score-detail" id="runningDetail">Cargando datos del clima...</p>
+      </article>
+      <article class="activity-card">
+        <h3>🚴 Ciclismo</h3>
+        <div class="score" id="cyclingScore">-</div>
+        <p class="score-label" id="cyclingLabel">—</p>
+        <p class="score-detail" id="cyclingDetail">Cargando datos del clima...</p>
+      </article>
+    </section>
+
+    <section class="rain-info">
+      <div class="rain-card">
+        <span class="rain-icon">🌧️</span>
+        <div>
+          <p class="rain-title">Última lluvia</p>
+          <p class="rain-value" id="lastRain">—</p>
+        </div>
+      </div>
+      <div class="rain-card">
+        <span class="rain-icon">⏳</span>
+        <div>
+          <p class="rain-title">Próxima lluvia</p>
+          <p class="rain-value" id="nextRain">—</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hourly">
+      <h3>Próximas horas</h3>
+      <div class="hourly-scroll" id="hourlyScroll"></div>
+    </section>
+
+    <footer class="footer">
+      <p>Datos de <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
+    </footer>
+
+  </main>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
